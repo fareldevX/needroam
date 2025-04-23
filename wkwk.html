@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Slot Roam Disini!</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 50px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+
+    #typing {
+      font-size: 1.5em;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: white }
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    section:nth-child(1) { animation-delay: 0.3s; }
+    section:nth-child(2) { animation-delay: 0.6s; }
+    section:nth-child(3) { animation-delay: 0.9s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #2575fc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #1a5edc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background-color: #111;
+      color: #ccc;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .dark-mode header {
+      background: linear-gradient(to right, #000000, #5a5a5a);
+    }
+
+    .dark-mode button {
+      background-color: #333;
+    }
+
+    .dark-mode footer {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Halo, Aku Bames keren</h1>
+    <div id="typing">WKWKWKWKWKWKWKWKWKWK...</div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Tentang Saya</h2>
+      <p>Saya seorang pengembang web yang suka membangun tampilan interaktif dan fungsional. Passion saya ada di antara baris-baris kode.</p>
+    </section>
+
+    <section>
+      <h2>Proyek Terbaru</h2>
+      <p>Portfolio, Website E-Commerce, Blog Pribadi, dan masih banyak lagi. Semua dibuat dengan cinta dan logika!</p>
+    </section>
+
+    <section>
+      <h2>Kontak Saya</h2>
+      <button onclick="alert('Hubungi saya di AFH Was Here!! Di Mobile Legends')">Hubungi Saya</button>
+      <button style="margin-left: 10px;" onclick="toggleDarkMode()">Ganti Mode 🌙</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Developer Hebat. Dibuat dengan HTML, CSS, & JS.
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Mengetik otomatis
+    const typingText = document.getElementById("typing");
+    typingText.style.animationPlayState = "running";
+  </script>
+</body>
+</html>
